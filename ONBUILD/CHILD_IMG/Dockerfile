@@ -1,1 +1,1 @@
-FROM build:1
+FROM new:1
