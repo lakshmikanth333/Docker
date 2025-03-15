@@ -14,5 +14,5 @@ RUN addgroup -S expense && adduser -S sai -G expense && \
 WORKDIR /opt/backend
 USER sai
 ENV DB_HOST="mysql"
-FROM --from=builder /opt/backend /opt/backend/
+COPY --from=builder /opt/backend /opt/backend/
 CMD ["node", "index.js"]
