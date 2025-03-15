@@ -18,9 +18,9 @@
 # CMD ["node", "index.js"]
 
 FROM node:latest
-RUN addgroup -S expense && adduser -S sai -G expense
-RUN mkdir /opt/backend
-RUN chown -R sai:expense /opt/backend
+RUN addgroup -S expense && adduser -S sai -G expense && \
+    mkdir /opt/backend && \
+    chown -R sai:expense /opt/backend 
 WORKDIR /opt/backend
 COPY package.json .
 COPY *.js .
