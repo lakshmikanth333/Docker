@@ -17,7 +17,7 @@
 # COPY --from=builder /opt/backend /opt/backend/
 # CMD ["node", "index.js"]
 
-FROM node:latest
+FROM node:20
 RUN addgroup -S expense && adduser -S sai -G expense && \
     mkdir /opt/backend && \
     chown -R sai:expense /opt/backend 
