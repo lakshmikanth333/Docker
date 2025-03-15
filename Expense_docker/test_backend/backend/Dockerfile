@@ -3,10 +3,10 @@ RUN addgroup -S expense && adduser -S sai -G expense && \
     mkdir /opt/backend && \
     chown -R sai:expense /opt/backend 
 WORKDIR /opt/backend
-COPY package.json .
-RUN npm install 
+COPY package.json . 
 COPY *.js .
+EXPOSE 80
+RUN npm install
 USER sai
 ENV DB_HOST="mysql"
-EXPOSE 80
 CMD ["node", "index.js"]
