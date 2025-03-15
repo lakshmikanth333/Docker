@@ -8,4 +8,5 @@ RUN npm install
 COPY *.js .
 USER sai
 ENV DB_HOST="mysql"
+EXPOSE 80
 CMD ["node", "index.js"]
